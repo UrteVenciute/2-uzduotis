@@ -2,6 +2,7 @@
 * Vietoj studentas strūktūros modifikuojam ją į klasę.
 * Palyginsiu realizacijos spartą 1.0 versijos kodo ir 1.1 versijos kodą, naudojant vektoriaus fiksuotą konteinerį, pačia greičiausią dalijimo strategiją ir 100000 ir 1000000 dydžio failus.
 * Gauti rezultatai:
+
 | laikas naudojant   | klasės        | struct       |
 | -------------      | ------------- |--------------|
 | nuskaitymas 100000 |               | 11.2294      |
