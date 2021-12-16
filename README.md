@@ -15,5 +15,6 @@
 * Atliksiu eksperimentinę analizę priklausomai nuo kompiliatoriaus optimizavimo lygio, nurodomo per flag'us: O1, O2, O3. Rezultatai:
 
 | FLAG  | 1000       | 10000    | 100000   | 1000000  |10000000|   
+|-------|------------|----------|----------|----------|--------| 
 | O1    | 0,275056   | 0.228769 | 1.85613  | 8.47258  | 59.2835|
 | O2    | 0.029916   | 0.164836 | 0.685419 | 5.63854  |        |
