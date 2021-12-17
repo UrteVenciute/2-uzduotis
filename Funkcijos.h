@@ -1,6 +1,4 @@
 #pragma once
-#include "Spausdinimas.h"
-#include "Studentas.h"
 #include <iostream>
 #include <iomanip> 
 #include <string>
@@ -13,7 +11,8 @@
 #include <sstream>
 #include <chrono>
 #include <list>
-#include <numeric>
+#include <iterator>
+
 
 using std::cin;
 using std::cout;
@@ -32,10 +31,8 @@ using std::ofstream;
 using std::stringstream;
 using std::to_string;
 using std::list;
-using namespace std;
 
-void failuKurimas(vector <int>& v1, int& ndKiek);
-
+int uzklausakiekpaz();
 void darbasSuFailu(vector <int>& v1, char& atsakymas);
 
 

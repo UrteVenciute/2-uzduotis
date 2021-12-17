@@ -7,12 +7,10 @@
 
 int main()
 {
-    int namuDarbuSkaicius;
-    char ats;
     vector <int> v = { 1000, 10000, 100000, 1000000, 10000000 };
-    cout << "\n";
-    failuKurimas(v, namuDarbuSkaicius);
-    cout << "\n";
+    int namuDarbuSkaicius;
+    namuDarbuSkaicius = uzklausakiekpaz();
+    char ats;
     darbasSuFailu(v, ats);
 }
 
