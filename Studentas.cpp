@@ -4,6 +4,7 @@ int sugeneruojami_sakiciai()
 {
     return rand() % 10 + 1;
 }
+
 vector<int> auto_marks(int how_many_marks)
 {
     vector<int> skaiciai;
@@ -13,6 +14,7 @@ vector<int> auto_marks(int how_many_marks)
     }
     return skaiciai;
 }
+
 float studentas::galutBalas(vector<int> skaiciai)
 {
     studentas grupe;
@@ -33,6 +35,7 @@ void failoNuskaitymas(vector <studentas>& grupe1, int& v1)
 
     string pav = "Studentai " + to_string(v1) + ".txt";
     ifstream nuskaitymas(pav);
+
     getline(nuskaitymas, temp2);
     stringstream s(temp2);
     while (s >> zodis)
@@ -46,11 +49,11 @@ void failoNuskaitymas(vector <studentas>& grupe1, int& v1)
         studentas stu;
         out_data >> vardas >> pavarde;
         stu.setVardas(vardas);
-        stu.setPavarde( pavarde);
+        stu.setPavarde(pavarde);
 
         stu.PazReserve(pazKiek);
 
-        for (int k = 0; k < (pazKiek); k++)
+        for (int k = 0; k < pazKiek; k++)
         {
             out_data >> temp;
             stu.PazPut(temp);
@@ -89,7 +92,7 @@ void rusiavimas2(vector <studentas>& grupe_vector, vector <studentas>& vargsiuka
     }
     grupe_vector.assign(grupe_vector.begin(), itt);
     grupe_vector.resize(grupe_vector.size());
-    
+
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start;
     time_vector.push_back(diff.count());
@@ -105,16 +108,16 @@ void spausdinimas(int& v1, char& atsakymas, vector <studentas>& sarasas, vector 
 
     ofstream rz("Rezultatai_vector_" + failoPav);
 
-        ss << setw(20) << left << "Pavarde" << setw(20) << left << "Vardas" << setw(20) << left << "Galutinis (Vid.)" << endl;
-        ss << "-------------------------------------------------------------------------" << endl;
+    ss << setw(20) << left << "Pavarde" << setw(20) << left << "Vardas" << setw(20) << left << "Galutinis (Vid.)" << endl;
+    ss << "-------------------------------------------------------------------------" << endl;
 
-        for (const auto& stu : sarasas)
-        {
-            ss << setw(20) << left << stu.GetPavarde() << setw(20) << left << stu.GetVardas() << setw(20) << left << fixed << setprecision(2) << stu.GetGalutinisVidurkis() << endl;
-        }
+    for (const auto& stu : sarasas)
+    {
+        ss << setw(20) << left << stu.GetPavarde() << setw(20) << left << stu.GetVardas() << setw(20) << left << fixed << setprecision(2) << stu.GetGalutinisVidurkis() << endl;
+    }
 
-        rz << ss.str();
-    
+    rz << ss.str();
+
     rz.close();
 
     auto end = std::chrono::high_resolution_clock::now();
@@ -127,11 +130,11 @@ void spausdinimas(char& atsakymas, vector <studentas>& grupe1)
 {
     ofstream rz("rezultatai.txt");
 
-        rz << setw(20) << left << "Pavarde" << setw(20) << left << "Vardas" << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
-        rz << "--------------------------------------------------------------------------------------------" << endl;
+    rz << setw(20) << left << "Pavarde" << setw(20) << left << "Vardas" << setw(20) << left << "Galutinis (Vid.)" << setw(20) << left << "Galutinis (Med.)" << endl;
+    rz << "--------------------------------------------------------------------------------------------" << endl;
 
-        for (int i = 0; i < grupe1.size(); i++)
-        {
-            rz << setw(20) << left << grupe1.at(i).GetPavarde() << setw(20) << left << grupe1.at(i).GetVardas() << setw(20) << left << fixed << setprecision(2) << grupe1.at(i).GetGalutinisVidurkis() << setw(20) << left << fixed << setprecision(2) << grupe1.at(i).GetGalutinisVidurkis() << endl;
-        }
+    for (int i = 0; i < grupe1.size(); i++)
+    {
+        rz << setw(20) << left << grupe1.at(i).GetPavarde() << setw(20) << left << grupe1.at(i).GetVardas() << setw(20) << left << fixed << setprecision(2) << grupe1.at(i).GetGalutinisVidurkis() << setw(20) << left << fixed << setprecision(2) << grupe1.at(i).GetGalutinisVidurkis() << endl;
+    }
 }
